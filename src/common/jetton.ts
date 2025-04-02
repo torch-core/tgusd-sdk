@@ -1,7 +1,7 @@
 import { beginCell, Builder } from '@ton/core';
 import { Address, Cell } from '@ton/core';
 import { Maybe } from '@ton/core/dist/utils/maybe';
-import { OPCODE_SIZE, QUERY_ID_SIZE, STATUS_SIZE } from './Size';
+import { OPCODE_SIZE, QUERY_ID_SIZE, JETTON_WALLET_STATUS_SIZE } from './Size';
 import { Op } from './Opcode';
 
 export type JettonTransferParams = {
@@ -50,7 +50,7 @@ export function storeJettonBurnMessage(params: JettonBurnParams): (builder: Buil
 
 export function packJettonWalletInit(ownerAddress: Address, jettonMasterAddress: Address): Cell {
   return beginCell()
-    .storeUint(0, STATUS_SIZE)
+    .storeUint(0, JETTON_WALLET_STATUS_SIZE)
     .storeCoins(0n)
     .storeAddress(ownerAddress)
     .storeAddress(jettonMasterAddress)
