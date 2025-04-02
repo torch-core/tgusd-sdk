@@ -1,14 +1,14 @@
 import { Address, Cell } from '@ton/core';
 
 export type StakeParams = {
-  queryId: bigint;
   stakeAmount: bigint;
+  queryId?: bigint;
   recipient?: Address;
 };
 
 export type ProvideCurrentQuoteParams = {
-  queryId: bigint;
-  recipient: Address;
+  queryId?: bigint;
+  recipient?: Address;
   customPayload?: Cell;
 };
 

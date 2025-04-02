@@ -40,7 +40,7 @@ export class tgUSDStaking implements Contract {
     return (builder: Builder) => {
       return builder
         .storeUint(Op.Staking.ProvideCurrentQuote, OPCODE_SIZE)
-        .storeUint(params.queryId, QUERY_ID_SIZE)
+        .storeUint(params.queryId ?? 0n, QUERY_ID_SIZE)
         .storeAddress(params.recipient)
         .storeMaybeRef(params.customPayload)
         .endCell();
@@ -63,7 +63,7 @@ export class tgUSDStaking implements Contract {
     const transferMessage = beginCell()
       .store(
         storeJettonTransferMessage({
-          queryId: params.queryId,
+          queryId: params.queryId ?? 0n,
           amount: params.stakeAmount,
           recipient: this.address,
           responseDst: sender,

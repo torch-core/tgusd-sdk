@@ -80,7 +80,7 @@ export class tgUSDEngine implements Contract {
     const transferMessage = beginCell()
       .store(
         storeJettonTransferMessage({
-          queryId: params.queryId,
+          queryId: params.queryId ?? 0n,
           amount: params.collateralInfo.collateralAmount,
           recipient: this.address,
           responseDst: sender,
@@ -113,7 +113,7 @@ export class tgUSDEngine implements Contract {
     const transferMessage = beginCell()
       .store(
         storeJettonBurnMessage({
-          queryId: params.queryId,
+          queryId: params.queryId ?? 0n,
           amount: params.burnAmount,
           customPayload: forwardPayload,
         }),

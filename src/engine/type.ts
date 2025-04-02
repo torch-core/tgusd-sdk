@@ -7,7 +7,7 @@ export type CollateralInfo = {
 };
 
 export type MintOrderParams = {
-  queryId: bigint;
+  queryId?: bigint;
   signature: Buffer;
   order: Cell;
   collateralInfo: CollateralInfo;
@@ -15,7 +15,7 @@ export type MintOrderParams = {
 };
 
 export type RedeemOrderParams = {
-  queryId: bigint;
+  queryId?: bigint;
   signature: Buffer;
   order: Cell;
   collateralAsset: Asset;
