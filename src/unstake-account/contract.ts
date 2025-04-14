@@ -27,7 +27,7 @@ export class UnstakeAccount implements Contract {
     const withdrawPayload = beginCell().store(this.storeWithdrawMessage(recipient, queryId)).endCell();
     return {
       to: this.address,
-      value: toNano('0.2'),
+      value: toNano('0.08'),
       body: withdrawPayload,
     };
   }
