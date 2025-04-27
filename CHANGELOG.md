@@ -1,5 +1,11 @@
 # @torch-finance/tgusd-sdk
 
+## 0.0.3
+
+### Patch Changes
+
+- d14ab40: Update getRedeemAccountAddress() with redeemAsset as input params
+
 ## 0.0.2
 
 ### Patch Changes
