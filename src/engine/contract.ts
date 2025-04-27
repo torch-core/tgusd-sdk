@@ -11,7 +11,7 @@ import {
   toNano,
 } from '@ton/core';
 import { Op } from '../common/Opcode';
-import { AssetType, coinsMarshaller } from '@torch-finance/core';
+import { Asset, AssetType, coinsMarshaller } from '@torch-finance/core';
 import { packJettonWalletInit, storeJettonBurnMessage, storeJettonTransferMessage } from '../common/jetton';
 import { MERKLE_ROOT_SIZE, OPCODE_SIZE, SIGNATURE_SIZE, SIGNER_KEY_SIZE } from '../common/Size';
 import { JettonMaster } from '@ton/ton';
@@ -175,9 +175,10 @@ export class tgUSDEngine implements Contract {
     return storage;
   }
 
-  async getRedeemAccountAddress(provider: ContractProvider, redeemer: Address) {
+  async getRedeemAccountAddress(provider: ContractProvider, redeemer: Address, redeemAsset: Asset) {
     const result = await provider.get('redeemAccount', [
       { type: 'slice', cell: beginCell().storeAddress(redeemer).endCell() },
+      { type: 'cell', cell: redeemAsset.toCell() },
     ]);
     return result.stack.readAddress();
   }
