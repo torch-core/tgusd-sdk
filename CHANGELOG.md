@@ -1,5 +1,12 @@
 # @torch-finance/tgusd-sdk
 
+## 0.0.4
+
+### Patch Changes
+
+- bfef96d: - Rename the variables in getConversionRatio to make them clearer.
+  - Added README
+
 ## 0.0.3
 
 ### Patch Changes
