@@ -13,6 +13,6 @@ export type ProvideCurrentQuoteParams = {
 };
 
 export type ConversionRatio = {
-  totalStakedWithUnvestedAmount: bigint;
+  totalActiveStake: bigint;
   totalShares: bigint;
 };

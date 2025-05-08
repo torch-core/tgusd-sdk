@@ -2,25 +2,11 @@
 
 This is the SDK for @torch-finance/tgusd-sdk.
 
-## Getting Started
+## Installation
 
 To start using this SDK:
 
 ```bash
-pnpm install
-pnpm start
+pnpm add @ton/core @ton/ton @ton/crypto zod @torch-finance/core
+pnpm add @torch-finance/tgusd-sdk
 ```
-
-## Testing
-
-```bash
-pnpm test
-```
-
-# Release
-
-```bash
-pnpm release
-```
-
-# tgusd-sdk
