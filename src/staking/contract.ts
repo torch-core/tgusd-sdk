@@ -198,8 +198,8 @@ export class tgUSDStaking implements Contract {
 
   async getConversionRatio(provider: ContractProvider): Promise<ConversionRatio> {
     const result = await provider.get('conversionRatio', []);
-    const totalStakedWithUnvestedAmount = result.stack.readBigNumber();
+    const totalActiveStake = result.stack.readBigNumber();
     const totalShares = result.stack.readBigNumber();
-    return { totalStakedWithUnvestedAmount, totalShares };
+    return { totalActiveStake, totalShares };
   }
 }
