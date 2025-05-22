@@ -1,5 +1,11 @@
 # @torch-finance/tgusd-sdk
 
+## 0.0.5
+
+### Patch Changes
+
+- 72e91cf: Add RedeemAccountStatus class
+
 ## 0.0.4
 
 ### Patch Changes
